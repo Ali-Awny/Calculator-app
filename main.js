@@ -39,7 +39,7 @@ buttons.forEach(button => {
                 result = firstNum * secondNum;
                 display.textContent = result;
             }else if (operator === "/"){
-                result = firstNum / secondNum;
+                result = Number((firstNum / secondNum).toFixed(3)); // Edited in 4 / 6 /2026
                 display.textContent = result;
             }
         }
