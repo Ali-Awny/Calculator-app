@@ -14,13 +14,14 @@ body {
   padding: 15px;
 }
 
+/* الكالكوليتر */
 .calculator {
   width: 100%;
   max-width: 380px;
   background: #1e293b;
   padding: 20px;
   border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
 
 /* الشاشة */
@@ -31,34 +32,31 @@ body {
   color: white;
   border-radius: 12px;
   margin-bottom: 15px;
-  padding: 20px;
-  font-size: 3rem;
+  padding: 15px;
+
+  font-size: 2.5rem;
   font-weight: bold;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  overflow-x: auto;      /* 👈 مهم */
-  overflow-y: hidden;
-  white-space: nowrap;   /* 👈 يمنع النزول لسطر جديد */
-  scroll-behavior: smooth;
+
+  /* مهم للـ scroll */
   overflow-x: auto;
+  overflow-y: hidden;
   white-space: nowrap;
+
   -webkit-overflow-scrolling: touch;
-
-  /* مهم جدًا عشان السحب يشتغل بإصبعك */
   touch-action: pan-x;
+  user-select: none;
 
-  cursor: grab;
+  /* مهم عشان الرقم يبقى ناحية اليمين */
+  text-align: right;
 }
 
-/* grid */
+/* الأزرار */
 .keys {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 10px;
 }
 
-/* الأزرار */
 .key {
   border: none;
   height: 60px;
@@ -96,7 +94,7 @@ body {
   background: #d97706;
 }
 
-/* زر C */
+/* زر clear */
 [data-action="clear"] {
   background: #ef4444;
 }
@@ -105,7 +103,7 @@ body {
   background: #dc2626;
 }
 
-/* زر = */
+/* زر equal */
 .equal {
   grid-column: span 2;
   background: #22c55e;
@@ -127,23 +125,15 @@ body {
   background: #2563eb;
 }
 
-/* ========================= */
-/* Responsive (موبايل) */
-/* ========================= */
-
+/* موبايل */
 @media (max-width: 500px) {
   .calculator {
     padding: 15px;
-    border-radius: 15px;
   }
 
   .display {
     font-size: 2rem;
     height: 70px;
-    overflow-x: auto;
-white-space: nowrap;
--webkit-overflow-scrolling: touch;
-touch-action: pan-x;
   }
 
   .key {
