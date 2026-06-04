@@ -41,6 +41,14 @@ body {
   overflow-y: hidden;
   white-space: nowrap;   /* 👈 يمنع النزول لسطر جديد */
   scroll-behavior: smooth;
+  overflow-x: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+
+  /* مهم جدًا عشان السحب يشتغل بإصبعك */
+  touch-action: pan-x;
+
+  cursor: grab;
 }
 
 /* grid */
@@ -132,6 +140,10 @@ body {
   .display {
     font-size: 2rem;
     height: 70px;
+    overflow-x: auto;
+white-space: nowrap;
+-webkit-overflow-scrolling: touch;
+touch-action: pan-x;
   }
 
   .key {
