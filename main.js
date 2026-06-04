@@ -46,3 +46,41 @@ buttons.forEach(button => {
         
     });
 });
+
+let isDown = false;
+let startX;
+let scrollLeft;
+
+display.addEventListener("mousedown", (e) => {
+    isDown = true;
+    display.classList.add("active");
+    startX = e.pageX - display.offsetLeft;
+    scrollLeft = display.scrollLeft;
+});
+
+display.addEventListener("mouseleave", () => {
+    isDown = false;
+});
+
+display.addEventListener("mouseup", () => {
+    isDown = false;
+});
+
+display.addEventListener("mousemove", (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - display.offsetLeft;
+    const walk = (x - startX) * 2;
+    display.scrollLeft = scrollLeft - walk;
+});
+
+display.addEventListener("touchstart", (e) => {
+    startX = e.touches[0].pageX;
+    scrollLeft = display.scrollLeft;
+});
+
+display.addEventListener("touchmove", (e) => {
+    const x = e.touches[0].pageX;
+    const walk = (x - startX) * 2;
+    display.scrollLeft = scrollLeft - walk;
+});
