@@ -32,12 +32,15 @@ body {
   border-radius: 12px;
   margin-bottom: 15px;
   padding: 20px;
-  font-size: 2.5rem;
+  font-size: 3rem;
   font-weight: bold;
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  overflow: hidden;
+  overflow-x: auto;      /* 👈 مهم */
+  overflow-y: hidden;
+  white-space: nowrap;   /* 👈 يمنع النزول لسطر جديد */
+  scroll-behavior: smooth;
 }
 
 /* grid */
