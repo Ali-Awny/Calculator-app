@@ -1,0 +1,142 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #0f172a;
+  font-family: Arial, sans-serif;
+  padding: 15px;
+}
+
+.calculator {
+  width: 100%;
+  max-width: 380px;
+  background: #1e293b;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* الشاشة */
+.display {
+  width: 100%;
+  height: 80px;
+  background: #0f172a;
+  color: white;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  padding: 20px;
+  font-size: 2.5rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  overflow: hidden;
+}
+
+/* grid */
+.keys {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+/* الأزرار */
+.key {
+  border: none;
+  height: 60px;
+  border-radius: 12px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.key:hover {
+  transform: translateY(-2px);
+}
+
+.key:active {
+  transform: scale(0.95);
+}
+
+/* الأرقام */
+.number {
+  background: #334155;
+  color: white;
+}
+
+.number:hover {
+  background: #475569;
+}
+
+/* العمليات */
+.operator {
+  background: #f59e0b;
+  color: white;
+}
+
+.operator:hover {
+  background: #d97706;
+}
+
+/* زر C */
+[data-action="clear"] {
+  background: #ef4444;
+}
+
+[data-action="clear"]:hover {
+  background: #dc2626;
+}
+
+/* زر = */
+.equal {
+  grid-column: span 2;
+  background: #22c55e;
+  color: white;
+}
+
+.equal:hover {
+  background: #16a34a;
+}
+
+/* زر Ans */
+.Ans {
+  grid-column: span 2;
+  background: #3b82f6;
+  color: white;
+}
+
+.Ans:hover {
+  background: #2563eb;
+}
+
+/* ========================= */
+/* Responsive (موبايل) */
+/* ========================= */
+
+@media (max-width: 500px) {
+  .calculator {
+    padding: 15px;
+    border-radius: 15px;
+  }
+
+  .display {
+    font-size: 2rem;
+    height: 70px;
+  }
+
+  .key {
+    height: 55px;
+    font-size: 1rem;
+  }
+
+  .keys {
+    gap: 8px;
+  }
+}
